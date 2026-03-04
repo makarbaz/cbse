@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Sapphire World · academy of talent</title>
-  <!-- Google Fonts & Font Awesome for crisp icons & uniqueness -->
+  <!-- Google Fonts & Font Awesome for crisp icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -23,11 +23,11 @@
       width: 100%;
     }
 
-    /* ===== UNIQUE GLOWING ANIMATED HEADER ===== */
+    /* ===== HEADER – NO YELLOW, ONLY CLEAN WHITE & GREY ===== */
     header {
       position: fixed;
       width: 100%;
-      background: rgba(10, 15, 25, 0.85);
+      background: rgba(10, 15, 25, 0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 18px 5%;
@@ -35,7 +35,7 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
       transition: all 0.3s;
       flex-wrap: wrap;
@@ -43,21 +43,16 @@
 
     .logo {
       font-size: clamp(1.2rem, 4vw, 1.7rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #FFD700, #f9e281, #FFD700);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% auto;
-      animation: shimmer 3s linear infinite;
+      font-weight: 700;
+      color: #ffffff;               /* pure white – no yellow */
       letter-spacing: -0.5px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    @keyframes shimmer {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
+    .logo i {
+      color: #a0b0c0;               /* subtle silver accent */
     }
 
     nav {
@@ -67,7 +62,7 @@
     }
 
     nav a {
-      color: #fff;
+      color: #e0e5ec;                /* light grey – no yellow */
       text-decoration: none;
       margin-left: clamp(12px, 2.5vw, 32px);
       font-weight: 500;
@@ -84,11 +79,10 @@
       bottom: -6px;
       left: 0;
       width: 0%;
-      height: 3px;
-      background: #FFD700;
-      border-radius: 6px;
-      transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-      box-shadow: 0 0 12px gold;
+      height: 2px;
+      background: #ffffff;           /* pure white underline */
+      border-radius: 2px;
+      transition: width 0.3s ease;
     }
 
     nav a:hover::after {
@@ -96,14 +90,13 @@
     }
 
     nav a:hover {
-      color: #FFD700;
-      text-shadow: 0 0 8px rgba(255,215,0,0.6);
+      color: #ffffff;
     }
 
-    /* ===== HERO WITH FLOATING ORBS + SPLIT ANIMATION ===== */
+    /* ===== HERO – NO YELLOW, COOL BLUE/WHITE TONES ===== */
     .hero {
       min-height: 100vh;
-      background: radial-gradient(circle at 20% 30%, #001f3f, #000814);
+      background: radial-gradient(circle at 20% 30%, #1a2a3a, #0a121c);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,19 +111,19 @@
       position: absolute;
       width: min(220px, 40vw);
       height: min(220px, 40vw);
-      background: rgba(255, 215, 0, 0.1);
+      background: rgba(255,255,255,0.02);   /* subtle white orbs */
       border-radius: 50%;
       top: 10%;
       left: 5%;
       filter: blur(60px);
-      animation: floatBlob 14s infinite alternate ease-in-out;
+      animation: floatBlob 14s infinite alternate;
     }
     .hero::after {
       content: '';
       position: absolute;
       width: min(320px, 50vw);
       height: min(320px, 50vw);
-      background: rgba(0, 191, 255, 0.08);
+      background: rgba(100,150,200,0.03);
       border-radius: 50%;
       bottom: 0;
       right: 0;
@@ -139,8 +132,8 @@
     }
 
     @keyframes floatBlob {
-      0% { transform: translate(0,0) scale(1); opacity: 0.4; }
-      100% { transform: translate(60px, 40px) scale(1.3); opacity: 0.8; }
+      0% { transform: translate(0,0) scale(1); opacity: 0.3; }
+      100% { transform: translate(60px, 40px) scale(1.3); opacity: 0.6; }
     }
     @keyframes floatBlob2 {
       0% { transform: translate(0,0) scale(1);}
@@ -156,52 +149,48 @@
 
     .hero h1 {
       font-size: clamp(2.2rem, 8vw, 4.2rem);
-      font-weight: 800;
+      font-weight: 700;              /* not medium, fully bold */
       line-height: 1.1;
-      background: linear-gradient(120deg, #fff8e0, #FFD700, #ffe270);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glowPulse 2.8s infinite alternate;
-      text-shadow: 0 0 15px rgba(255,215,0,0.3);
+      color: #ffffff;                /* pure white */
+      text-shadow: 0 0 20px rgba(255,255,255,0.3);
+      animation: glowPulse 3s infinite alternate;
     }
 
     @keyframes glowPulse {
-      0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #ffb347; }
-      100% { text-shadow: 0 0 30px #ffaa00, 0 0 50px #ffdd44; }
+      0% { text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+      100% { text-shadow: 0 0 35px rgba(255,255,255,0.6); }
     }
 
     .hero p {
       font-size: clamp(1rem, 3vw, 1.4rem);
       margin-top: 20px;
-      color: #d9e2f0;
+      color: #cbd5e1;                /* soft grey-white */
       font-weight: 300;
-      backdrop-filter: blur(2px);
     }
 
     .hero .btn {
       margin-top: 35px;
-      padding: 14px 32px;
+      padding: 14px 36px;
       background: transparent;
-      border: 2px solid #FFD700;
-      color: #FFD700;
-      font-weight: 700;
-      border-radius: 50px;
-      font-size: clamp(1rem, 3vw, 1.25rem);
+      border: 2px solid #ffffff;      /* white border, no yellow */
+      color: #ffffff;
+      font-weight: 600;
+      border-radius: 40px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
       text-decoration: none;
       display: inline-block;
-      transition: 0.4s;
-      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+      transition: 0.3s;
       backdrop-filter: blur(4px);
     }
 
     .hero .btn:hover {
-      background: #FFD700;
-      color: #000;
-      box-shadow: 0 0 45px #FFD700;
-      transform: scale(1.08);
+      background: #ffffff;
+      color: #0a0c10;
+      box-shadow: 0 0 35px rgba(255,255,255,0.5);
+      transform: scale(1.05);
     }
 
-    /* section general */
+    /* section general – no yellow titles, now white/silver */
     .section {
       padding: clamp(60px, 10vh, 110px) 5%;
       position: relative;
@@ -210,59 +199,60 @@
 
     .section h2 {
       font-size: clamp(2rem, 6vw, 2.8rem);
-      font-weight: 700;
+      font-weight: 600;
       text-align: center;
       margin-bottom: clamp(40px, 8vh, 70px);
-      color: #FFD700;
+      color: #ffffff;                /* white headings */
       position: relative;
       display: inline-block;
       width: 100%;
       word-break: break-word;
+      letter-spacing: 1px;
     }
 
     .section h2:after {
       content: '';
       display: block;
       width: min(120px, 30%);
-      height: 4px;
-      background: #FFD700;
+      height: 3px;
+      background: #ffffff;           /* white underline */
       margin: 18px auto 0;
-      border-radius: 4px;
-      box-shadow: 0 0 20px gold;
+      border-radius: 2px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
     }
 
-    /* ===== CURRICULUM SECTION (NURSERY TO 12TH) ===== */
+    /* ===== CURRICULUM – CLASS 6 TO 12 DETAILED (MP BOARD) ===== */
     .grade-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: clamp(20px, 3vw, 35px);
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: clamp(25px, 3vw, 40px);
       margin-bottom: 50px;
       width: 100%;
     }
 
     .grade-card {
-      background: rgba(20, 30, 45, 0.9);
+      background: rgba(20, 30, 40, 0.8);   /* darker card, no yellow */
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,215,0,0.15);
-      border-radius: 40px 12px 40px 12px;
-      padding: clamp(20px, 4vw, 30px) clamp(18px, 3vw, 25px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 30px 12px 30px 12px;
+      padding: clamp(25px, 4vw, 35px) clamp(20px, 3vw, 30px);
       transition: 0.4s;
       box-shadow: 0 20px 30px -10px black;
       width: 100%;
     }
 
     .grade-card:hover {
-      transform: translateY(-12px);
-      border-color: #FFD700;
-      box-shadow: 0 30px 40px -10px #ffd90055;
-      background: #1f2a3a;
+      transform: translateY(-10px);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 30px 40px -10px #a0b0c0;
+      background: #1e2a36;
     }
 
     .grade-header {
       display: flex;
       align-items: center;
-      gap: clamp(10px, 2vw, 15px);
-      border-bottom: 2px dashed #FFD700;
+      gap: 15px;
+      border-bottom: 2px dashed #9aaec2;    /* silver dashed line */
       padding-bottom: 15px;
       margin-bottom: 20px;
       flex-wrap: wrap;
@@ -270,52 +260,53 @@
 
     .grade-header i {
       font-size: clamp(2.2rem, 5vw, 2.8rem);
-      color: #FFD700;
-      filter: drop-shadow(0 0 5px gold);
+      color: #cfdeff;                 /* light blueish white */
     }
 
     .grade-header h3 {
-      font-size: clamp(1.4rem, 4vw, 1.9rem);
-      font-weight: 700;
-      color: white;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 600;
+      color: #ffffff;
       word-break: break-word;
     }
 
     .grade-card p {
-      margin: 8px 0;
+      margin: 10px 0;
       font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       display: flex;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
+      color: #d1dbe9;
     }
 
     .grade-card i.fa-arrow-right {
-      color: #FFD700;
+      color: #aac3d9;                 /* soft white-cyan */
       font-size: 0.9rem;
       flex-shrink: 0;
     }
 
     .subject-badge {
       display: inline-block;
-      background: rgba(255,215,0,0.15);
-      padding: 5px 12px;
+      background: rgba(255,255,255,0.1);
+      padding: 5px 14px;
       border-radius: 40px;
       font-size: 0.85rem;
-      margin: 5px 5px 0 0;
-      border: 1px solid #FFD70033;
-      white-space: nowrap;
+      margin: 5px 6px 0 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #e0ecff;
+      font-weight: 400;
     }
 
-    /* AI PROGRESSIVE LEARNING SECTION */
+    /* AI PROGRESSIVE LEARNING – white/blue theme */
     .ai-showcase {
       display: flex;
       flex-wrap: wrap;
       gap: clamp(25px, 5vw, 40px);
-      background: linear-gradient(145deg, #0f1a24, #07111c);
-      border-radius: 70px 20px 70px 20px;
-      padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 50px);
-      border: 1px solid #FFD70033;
+      background: linear-gradient(145deg, #121e2a, #0b141f);
+      border-radius: 60px 20px 60px 20px;
+      padding: clamp(30px, 5vw, 50px);
+      border: 1px solid rgba(255,255,255,0.15);
       margin-top: 30px;
       width: 100%;
     }
@@ -327,12 +318,13 @@
 
     .ai-content h3 {
       font-size: clamp(1.8rem, 5vw, 2.3rem);
-      color: #FFD700;
+      color: #ffffff;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
+      font-weight: 600;
     }
 
     .ai-content ul {
@@ -340,16 +332,17 @@
     }
 
     .ai-content li {
-      margin: 15px 0;
+      margin: 18px 0;
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       display: flex;
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
+      color: #d1def0;
     }
 
     .ai-content li i {
-      color: #FFD700;
+      color: #bfd9ff;
       font-size: clamp(1.6rem, 4vw, 2rem);
       width: 40px;
       flex-shrink: 0;
@@ -366,41 +359,39 @@
     .image-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: clamp(10px, 2vw, 15px);
+      gap: 15px;
       width: 100%;
     }
 
     .image-item {
-      background: #2d3b4f;
+      background: #263340;
       border-radius: 30px 8px 30px 8px;
       padding: clamp(15px, 3vw, 25px) 5px;
       text-align: center;
-      border: 1px solid gold;
+      border: 1px solid rgba(255,255,255,0.15);
       transition: 0.3s;
     }
 
     .image-item i {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
-      color: #FFD700;
+      color: #d1e3ff;
       margin-bottom: 8px;
     }
 
     .image-item span {
       display: block;
-      font-weight: 500;
+      font-weight: 400;
+      color: white;
       font-size: clamp(0.8rem, 2vw, 1rem);
     }
 
     .image-item:hover {
-      background: #FFD700;
-      color: black;
-      transform: scale(1.05);
-    }
-    .image-item:hover i {
-      color: black;
+      background: #3e5068;
+      transform: scale(1.03);
+      border-color: white;
     }
 
-    /* features grid */
+    /* features grid – no yellow */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
@@ -408,53 +399,46 @@
     }
 
     .card {
-      background: rgba(20, 30, 45, 0.8);
+      background: rgba(30, 40, 55, 0.7);
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,215,0,0.2);
+      border: 1px solid rgba(255,255,255,0.1);
       padding: clamp(25px, 4vw, 40px) clamp(15px, 3vw, 20px);
       border-radius: 40px 12px 40px 12px;
       text-align: center;
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 600;
-      transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+      font-weight: 500;
+      transition: 0.35s;
       box-shadow: 0 20px 30px -10px rgba(0,0,0,0.7);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
       cursor: default;
-      width: 100%;
+      color: white;
     }
 
     .card i {
       font-size: clamp(2.5rem, 5vw, 3.3rem);
-      color: #FFD700;
-      filter: drop-shadow(0 0 8px gold);
+      color: #b6d0f0;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: rotate(1deg) scale(1.05) translateY(-12px);
-      background: #FFD700;
-      border-color: white;
-      color: #0a0c10;
-      box-shadow: 0 30px 40px #f0b30055, 0 0 0 3px #ffffff30;
+      background: #2d3f57;
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 35px #1a2a3a;
     }
 
-    .card:hover i {
-      color: #0a0c10;
-      filter: drop-shadow(0 0 2px black);
-    }
-
-    /* form area */
+    /* admission form – monochrome */
     .admission-form {
       max-width: min(700px, 100%);
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(10, 20, 30, 0.7);
       backdrop-filter: blur(12px);
       padding: clamp(25px, 5vw, 45px);
       border-radius: 40px 12px 40px 12px;
-      border: 1px solid rgba(255,215,0,0.3);
+      border: 1px solid rgba(255,255,255,0.15);
       box-shadow: 0 25px 50px #00000080;
     }
 
@@ -466,17 +450,16 @@
     .input-group label {
       display: block;
       margin-bottom: 8px;
-      font-weight: 500;
-      color: #FFD700;
+      font-weight: 400;
+      color: #ccddf5;
       letter-spacing: 0.5px;
-      font-size: clamp(0.95rem, 2.5vw, 1rem);
     }
 
     .input-group input, .input-group textarea, .input-group select {
       width: 100%;
       padding: 16px 20px;
-      background: #1e293b;
-      border: 1px solid #3a4a5f;
+      background: #1c2a38;
+      border: 1px solid #3a4b5a;
       border-radius: 30px;
       font-size: 1rem;
       color: white;
@@ -485,34 +468,32 @@
     }
 
     .input-group select option {
-      background: #1e293b;
-      color:white;
+      background: #1c2a38;
+      color: white;
     }
 
     .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
-      border-color: #FFD700;
-      box-shadow: 0 0 0 4px rgba(255,215,0,0.2), 0 0 20px gold;
+      border-color: #a0b8d0;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
     }
 
     .btn-submit {
-      background: #FFD700;
+      background: #ffffff;
       border: none;
-      color: #0b0f17;
-      font-weight: 700;
+      color: #0a121c;
+      font-weight: 600;
       padding: 18px 30px;
       border-radius: 60px;
       font-size: clamp(1.1rem, 3vw, 1.3rem);
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 10px 20px #ffbf00;
       width: 100%;
-      letter-spacing: 0.5px;
     }
 
     .btn-submit:hover {
-      background: white;
-      box-shadow: 0 10px 35px #FFD700;
-      transform: scale(1.02);
+      background: #dbeafe;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+      transform: scale(1.01);
     }
 
     /* contact & map */
@@ -522,26 +503,19 @@
       align-items: center;
       gap: 20px;
       font-size: clamp(1rem, 2.5vw, 1.3rem);
-      background: rgba(255,215,0,0.05);
+      background: rgba(30, 45, 60, 0.3);
       padding: clamp(25px, 5vw, 40px);
       border-radius: 60px 16px 60px 16px;
       backdrop-filter: blur(4px);
-      border: 1px solid gold;
+      border: 1px solid rgba(255,255,255,0.2);
       width: 100%;
-      word-break: break-word;
-    }
-
-    .contact-info p {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
+      color: #e0edff;
     }
 
     .contact-info i {
-      color: #FFD700;
+      color: #b5d0ff;
       font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-right: 8px;
     }
 
     .map-container {
@@ -550,39 +524,36 @@
       margin: 40px auto 0;
       border-radius: 40px;
       overflow: hidden;
-      border: 2px solid rgba(255,215,0,0.4);
-      box-shadow: 0 0 30px #ffd90033;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 30px #1e2e3e;
       transition: 0.4s;
     }
 
     .map-container:hover {
-      border-color: #FFD700;
-      box-shadow: 0 0 50px #ffdf5e;
+      border-color: rgba(255,255,255,0.5);
     }
 
     iframe {
       display: block;
       width: 100%;
       height: clamp(250px, 40vh, 320px);
-      filter: grayscale(0.2) invert(4%) contrast(1.1);
+      filter: grayscale(0.3) brightness(0.9);
     }
 
-    /* footer */
     footer {
-      background: #03050a;
+      background: #030b12;
       padding: 35px 20px;
       text-align: center;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      border-top: 1px solid #FFD70033;
-      color: #aab3c3;
-      width: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #b0c2d4;
     }
     footer span {
-      color: #FFD700;
-      font-weight: 600;
+      color: #ffffff;
+      font-weight: 500;
     }
 
-    /* whatsapp animated - responsive */
+    /* whatsapp – unchanged, stays green */
     .whatsapp {
       position: fixed;
       bottom: clamp(15px, 4vh, 30px);
@@ -599,84 +570,30 @@
       text-decoration: none;
       box-shadow: 0 8px 20px #25d36699;
       z-index: 999;
-      transition: 0.3s;
       animation: bounceCall 2s infinite;
     }
 
     @keyframes bounceCall {
       0%,100%{ transform: scale(1); }
-      50%{ transform: scale(1.1); box-shadow: 0 12px 30px #25d366; }
+      50%{ transform: scale(1.1); }
     }
 
     .whatsapp:hover {
       background: #20b859;
-      transform: scale(1.15) rotate(5deg);
+      transform: scale(1.15);
       animation: none;
     }
 
-    /* tablet and small laptop adjustments */
-    @media screen and (max-width: 1024px) and (min-width: 769px) {
-      .grade-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .hero h1 {
-        font-size: 3.5rem;
-      }
+    /* responsive */
+    @media (max-width: 768px) {
+      nav a { margin-left: 12px; font-size: 0.9rem; }
     }
-
-    @media screen and (max-width: 768px) {
-      nav a {
-        margin-left: 12px;
-        font-size: 0.9rem;
-      }
-      .grade-header h3 {
-        font-size: 1.5rem;
-      }
-      .ai-showcase {
-        flex-direction: column;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      header {
-        padding: 12px 4%;
-      }
-      nav {
-        width: 100%;
-        justify-content: center;
-        margin-top: 8px;
-      }
-      nav a {
-        margin: 0 8px;
-        font-size: 0.85rem;
-      }
-      .logo {
-        width: 100%;
-        justify-content: center;
-      }
-      .hero .btn {
-        padding: 12px 24px;
-      }
-      .grade-header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .contact-info p {
-        flex-direction: column;
-        gap: 5px;
-      }
-    }
-
-    /* extra small devices */
-    @media screen and (max-width: 360px) {
-      nav a {
-        margin: 0 5px;
-        font-size: 0.75rem;
-      }
-      .subject-badge {
-        font-size: 0.75rem;
-        padding: 4px 8px;
-      }
+    @media (max-width: 480px) {
+      header { padding: 12px 4%; }
+      nav { width: 100%; justify-content: center; margin-top: 6px; }
+      nav a { margin: 0 8px; font-size: 0.85rem; }
+      .logo { width: 100%; justify-content: center; }
+      .grade-header { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -692,102 +609,126 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO – pure white, no yellow -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Sapphire World<br>Academy of Talent</h1>
-      <p><i class="fas fa-star" style="color:#FFD700;"></i> A Unit of Peregrine Educare | Launching in Mandideep <i class="fas fa-star" style="color:#FFD700;"></i></p>
-      <p style="font-size:clamp(1.2rem,4vw,1.6rem); font-weight:500;">Integrated School + Coaching · ICSE Curriculum</p>
+      <p><i class="fas fa-star" style="color:#b5d0ff;"></i> A Unit of Peregrine Educare | Launching in Mandideep <i class="fas fa-star" style="color:#b5d0ff;"></i></p>
+      <p style="font-size:clamp(1.2rem,4vw,1.6rem); font-weight:400;">Integrated School + Coaching · MP Board</p>
       <a href="#admission" class="btn">✨ Admissions Open ✨</a>
     </div>
   </section>
 
-  <!-- CURRICULUM SECTION : NURSERY TO 12TH WITH SUBJECTS -->
+  <!-- CURRICULUM – now classes 6 to 12 detailed, MP BOARD, no ICSE -->
   <section class="section" id="curriculum">
-    <h2>📚 GRADE-LEVEL EXCELLENCE 📚</h2>
+    <h2>📘 MP BOARD CURRICULUM (6 TO 12) 📘</h2>
     <div class="grade-grid">
-      <!-- nursery - kg -->
+      <!-- class 6 -->
       <div class="grade-card">
         <div class="grade-header">
-          <i class="fas fa-child"></i>
-          <h3>Nursery - KG</h3>
+          <i class="fas fa-book"></i>
+          <h3>Class 6</h3>
         </div>
-        <p><i class="fas fa-arrow-right"></i> Playway / Montessori</p>
-        <p><i class="fas fa-arrow-right"></i> Alphabets, Numbers, Rhymes</p>
-        <p><i class="fas fa-arrow-right"></i> Art & Craft, Storytelling</p>
-        <p><i class="fas fa-arrow-right"></i> Basic motor skills</p>
-        <div><span class="subject-badge">Phonics</span><span class="subject-badge">Numbers</span><span class="subject-badge">Rhymes</span></div>
+        <p><i class="fas fa-arrow-right"></i> Hindi, English, Sanskrit</p>
+        <p><i class="fas fa-arrow-right"></i> Mathematics, General Science</p>
+        <p><i class="fas fa-arrow-right"></i> Social Science (History, Civics, Geography)</p>
+        <p><i class="fas fa-arrow-right"></i> Computer fundamentals, Art</p>
+        <div><span class="subject-badge">Hindi</span><span class="subject-badge">English</span><span class="subject-badge">Maths</span><span class="subject-badge">Science</span></div>
       </div>
-      <!-- classes 1-5 -->
-      <div class="grade-card">
-        <div class="grade-header">
-          <i class="fas fa-pencil-alt"></i>
-          <h3>Grade 1 - 5</h3>
-        </div>
-        <p><i class="fas fa-arrow-right"></i> English, Hindi, Mathematics</p>
-        <p><i class="fas fa-arrow-right"></i> EVS, General Knowledge</p>
-        <p><i class="fas fa-arrow-right"></i> Computer Science, Art</p>
-        <p><i class="fas fa-arrow-right"></i> Value Education, Sports</p>
-        <div><span class="subject-badge">English</span><span class="subject-badge">Maths</span><span class="subject-badge">EVS</span><span class="subject-badge">Hindi</span></div>
-      </div>
-      <!-- classes 6-8 -->
-      <div class="grade-card">
-        <div class="grade-header">
-          <i class="fas fa-flask"></i>
-          <h3>Grade 6 - 8</h3>
-        </div>
-        <p><i class="fas fa-arrow-right"></i> Science (Phy, Chem, Bio) </p>
-        <p><i class="fas fa-arrow-right"></i> Social Studies, Maths, English</p>
-        <p><i class="fas fa-arrow-right"></i> Sanskrit / French (3rd lang)</p>
-        <p><i class="fas fa-arrow-right"></i> AI foundations, Robotics</p>
-        <div><span class="subject-badge">Science</span><span class="subject-badge">Maths</span><span class="subject-badge">SST</span><span class="subject-badge">French</span></div>
-      </div>
-      <!-- classes 9-10 -->
+      <!-- class 7 -->
       <div class="grade-card">
         <div class="grade-header">
           <i class="fas fa-book-open"></i>
-          <h3>Grade 9 - 10 (ICSE)</h3>
+          <h3>Class 7</h3>
         </div>
-        <p><i class="fas fa-arrow-right"></i> English, Maths, Science (PCB/PCM)</p>
-        <p><i class="fas fa-arrow-right"></i> History/Civics, Geography</p>
-        <p><i class="fas fa-arrow-right"></i> Computer Applications / Economics</p>
-        <p><i class="fas fa-arrow-right"></i> AI & Python coding electives</p>
-        <div><span class="subject-badge">Maths</span><span class="subject-badge">Science</span><span class="subject-badge">Comp.App</span><span class="subject-badge">AI</span></div>
+        <p><i class="fas fa-arrow-right"></i> Hindi, English, Sanskrit (3rd lang)</p>
+        <p><i class="fas fa-arrow-right"></i> Mathematics, Physics/Chemistry/Bio foundation</p>
+        <p><i class="fas fa-arrow-right"></i> Social Studies – History, Geography, Civics</p>
+        <p><i class="fas fa-arrow-right"></i> Robotics & AI awareness</p>
+        <div><span class="subject-badge">Science</span><span class="subject-badge">Maths</span><span class="subject-badge">SST</span><span class="subject-badge">Sanskrit</span></div>
       </div>
-      <!-- classes 11-12 -->
+      <!-- class 8 -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <i class="fas fa-flask"></i>
+          <h3>Class 8</h3>
+        </div>
+        <p><i class="fas fa-arrow-right"></i> Hindi, English, Sanskrit</p>
+        <p><i class="fas fa-arrow-right"></i> Mathematics (Algebra, Geometry)</p>
+        <p><i class="fas fa-arrow-right"></i> Science (Physics, Chemistry, Biology)</p>
+        <p><i class="fas fa-arrow-right"></i> Social Science, Coding (Python basics)</p>
+        <div><span class="subject-badge">Phy/Chem/Bio</span><span class="subject-badge">Algebra</span><span class="subject-badge">Geo</span></div>
+      </div>
+      <!-- class 9 (MP Board) -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <i class="fas fa-user-graduate"></i>
+          <h3>Class 9 (MP Board)</h3>
+        </div>
+        <p><i class="fas fa-arrow-right"></i> Hindi, English, Sanskrit / Urdu</p>
+        <p><i class="fas fa-arrow-right"></i> Mathematics, Science (PCB + Practical)</p>
+        <p><i class="fas fa-arrow-right"></i> Social Science (Hist, Geo, Pol Sci, Eco)</p>
+        <p><i class="fas fa-arrow-right"></i> Foundation for NTSE / Olympiad</p>
+        <div><span class="subject-badge">Science</span><span class="subject-badge">Maths</span><span class="subject-badge">SST</span><span class="subject-badge">NTSE</span></div>
+      </div>
+      <!-- class 10 (MP Board) -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <i class="fas fa-award"></i>
+          <h3>Class 10 (MP Board)</h3>
+        </div>
+        <p><i class="fas fa-arrow-right"></i> Hindi, English, Sanskrit / other language</p>
+        <p><i class="fas fa-arrow-right"></i> Mathematics (Standard or Basic)</p>
+        <p><i class="fas fa-arrow-right"></i> Science (theory + practical) </p>
+        <p><i class="fas fa-arrow-right"></i> Social Science, IT/Computer Applications</p>
+        <div><span class="subject-badge">Board pattern</span><span class="subject-badge">Science</span><span class="subject-badge">Maths</span></div>
+      </div>
+      <!-- class 11 (MP Board) – streams -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <i class="fas fa-chart-line"></i>
+          <h3>Class 11 (MP Board)</h3>
+        </div>
+        <p><i class="fas fa-arrow-right"></i> <strong>Science</strong> – PCM/PCB with CS/Hindi</p>
+        <p><i class="fas fa-arrow-right"></i> <strong>Commerce</strong> – Accounts, B.St., Eco, Maths/IT</p>
+        <p><i class="fas fa-arrow-right"></i> <strong>Arts</strong> – History, Geography, Pol Sci, Sociology</p>
+        <p><i class="fas fa-arrow-right"></i> Vocational: AI, Web design, Retail</p>
+        <div><span class="subject-badge">PCM</span><span class="subject-badge">PCB</span><span class="subject-badge">Commerce</span><span class="subject-badge">Arts</span></div>
+      </div>
+      <!-- class 12 (MP Board) – detailed -->
       <div class="grade-card">
         <div class="grade-header">
           <i class="fas fa-graduation-cap"></i>
-          <h3>Grade 11 - 12 (ICSE)</h3>
+          <h3>Class 12 (MP Board)</h3>
         </div>
-        <p><i class="fas fa-arrow-right"></i> Science (PCM/PCB) with CS</p>
-        <p><i class="fas fa-arrow-right"></i> Commerce (Accounts, Eco, B.St.)</p>
-        <p><i class="fas fa-arrow-right"></i> Humanities (Psychology, Sociology)</p>
-        <p><i class="fas fa-arrow-right"></i> AI, Data science, Robotics advanced</p>
-        <div><span class="subject-badge">PCM/PCB</span><span class="subject-badge">Commerce</span><span class="subject-badge">Humanities</span><span class="subject-badge">AI/ML</span></div>
+        <p><i class="fas fa-arrow-right"></i> <strong>Science:</strong> Physics, Chemistry, Maths/Biology, English</p>
+        <p><i class="fas fa-arrow-right"></i> <strong>Commerce:</strong> Accounts, Business Studies, Economics, Maths/IT</p>
+        <p><i class="fas fa-arrow-right"></i> <strong>Arts:</strong> History, Geography, Political Science, Sociology</p>
+        <p><i class="fas fa-arrow-right"></i> Board exam prep + JEE/NEET/CLAT foundation</p>
+        <div><span class="subject-badge">Board exams</span><span class="subject-badge">JEE/NEET</span><span class="subject-badge">Commerce</span></div>
       </div>
-      <!-- integrated coaching -->
+      <!-- integrated coaching (6-12) -->
       <div class="grade-card">
         <div class="grade-header">
           <i class="fas fa-chalkboard-teacher"></i>
-          <h3>+ Integrated Coaching</h3>
+          <h3>Integrated Coaching (6-12)</h3>
         </div>
-        <p><i class="fas fa-arrow-right"></i> JEE/NEET foundation (9-12)</p>
-        <p><i class="fas fa-arrow-right"></i> NTSE, Olympiad prep</p>
-        <p><i class="fas fa-arrow-right"></i> Spoken English & communication</p>
-        <p><i class="fas fa-arrow-right"></i> Coding, Robotics & AI Lab</p>
-        <div><span class="subject-badge">JEE/NEET</span><span class="subject-badge">Olympiad</span><span class="subject-badge">Coding</span></div>
+        <p><i class="fas fa-arrow-right"></i> JEE/NEET foundation (class 9-12)</p>
+        <p><i class="fas fa-arrow-right"></i> NTSE, Olympiad, KVPY</p>
+        <p><i class="fas fa-arrow-right"></i> Spoken English & Communication</p>
+        <p><i class="fas fa-arrow-right"></i> AI, Robotics, Python, Web development</p>
+        <div><span class="subject-badge">JEE/NEET</span><span class="subject-badge">Olympiad</span><span class="subject-badge">AI</span></div>
       </div>
     </div>
   </section>
 
-  <!-- AI PROGRESSIVE LEARNING & IMAGE SHOWCASE -->
+  <!-- AI PROGRESSIVE LEARNING (no change except color) -->
   <section class="section" style="padding-top:0;">
     <div class="ai-showcase">
       <div class="ai-content">
         <h3><i class="fas fa-microchip"></i> AI-Powered Learning</h3>
         <ul>
-          <li><i class="fas fa-robot"></i> Personalized learning paths (K-12)</li>
+          <li><i class="fas fa-robot"></i> Personalized learning paths (6-12)</li>
           <li><i class="fas fa-brain"></i> Adaptive AI tutorials & assessments</li>
           <li><i class="fas fa-code"></i> Coding, Robotics & Python with AI</li>
           <li><i class="fas fa-chart-line"></i> Real-time progress analytics</li>
@@ -807,7 +748,7 @@
     </div>
   </section>
 
-  <!-- PREMIUM FEATURES -->
+  <!-- PREMIUM FEATURES (monochrome) -->
   <section class="section" id="features">
     <h2>✦ PREMIUM FEATURES ✦</h2>
     <div class="features">
@@ -820,7 +761,7 @@
     </div>
   </section>
 
-  <!-- ADMISSION with class selection -->
+  <!-- ADMISSION with MP Board class options -->
   <section class="section" id="admission">
     <h2>🎓 ONLINE ADMISSION 🎓</h2>
     <div class="admission-form">
@@ -830,12 +771,12 @@
           <input type="text" placeholder="Full name" required>
         </div>
         <div class="input-group">
-          <label><i class="fas fa-graduation-cap"></i> Applying for Grade</label>
+          <label><i class="fas fa-graduation-cap"></i> Applying for Class (MP Board)</label>
           <select required>
             <option value="">-- Select class --</option>
-            <option>Nursery</option><option>KG</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option>
-            <option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
-            <option>Grade 11 (Science)</option><option>Grade 11 (Commerce)</option><option>Grade 12 (Science)</option><option>Grade 12 (Commerce)</option>
+            <option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option>
+            <option>Class 10</option><option>Class 11 (Science)</option><option>Class 11 (Commerce)</option><option>Class 11 (Arts)</option>
+            <option>Class 12 (Science)</option><option>Class 12 (Commerce)</option><option>Class 12 (Arts)</option>
           </select>
         </div>
         <div class="input-group">
@@ -869,7 +810,7 @@
 
   <footer>
     <span>© 2026 Sapphire World Academy of Talent</span> — A Unit of Peregrine Educare <br>
-    <i class="fas fa-gem" style="color:#FFD700;"></i> Nursery to 12th · ICSE · AI-forward learning <i class="fas fa-gem" style="color:#FFD700;"></i>
+    <i class="fas fa-gem"></i> MP Board (6-12) · AI-forward learning · Integrated Coaching <i class="fas fa-gem"></i>
   </footer>
 
   <a href="https://wa.me/919999999999" class="whatsapp" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -880,14 +821,10 @@
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
           header.style.background = 'rgba(0, 0, 0, 0.95)';
-          header.style.backdropFilter = 'blur(16px)';
         } else {
-          header.style.background = 'rgba(10, 15, 25, 0.8)';
-          header.style.backdropFilter = 'blur(12px)';
+          header.style.background = 'rgba(10, 15, 25, 0.9)';
         }
       });
-
-      // optional: close mobile menu on click (if any)
     })();
   </script>
 </body>
