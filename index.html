@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Sapphire World · academy of talent</title>
   <!-- Google Fonts & Font Awesome for crisp icons & uniqueness -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
       background: #0a0c10;
       color: #f0f3fa;
       overflow-x: hidden;
+      width: 100%;
     }
 
     /* ===== UNIQUE GLOWING ANIMATED HEADER ===== */
@@ -29,7 +30,7 @@
       background: rgba(10, 15, 25, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      padding: 18px 8%;
+      padding: 18px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,10 +38,11 @@
       border-bottom: 1px solid rgba(255, 215, 0, 0.25);
       box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
       transition: all 0.3s;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.7rem;
+      font-size: clamp(1.2rem, 4vw, 1.7rem);
       font-weight: 800;
       background: linear-gradient(135deg, #FFD700, #f9e281, #FFD700);
       -webkit-background-clip: text;
@@ -48,6 +50,9 @@
       background-size: 200% auto;
       animation: shimmer 3s linear infinite;
       letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     @keyframes shimmer {
@@ -55,15 +60,22 @@
       100% { background-position: 200% center; }
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     nav a {
       color: #fff;
       text-decoration: none;
-      margin-left: 32px;
+      margin-left: clamp(12px, 2.5vw, 32px);
       font-weight: 500;
-      font-size: 1.05rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
       position: relative;
       transition: 0.2s;
       letter-spacing: 0.3px;
+      white-space: nowrap;
     }
 
     nav a::after {
@@ -96,7 +108,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 5%;
+      padding: 80px 5% 60px;
       position: relative;
       overflow: hidden;
     }
@@ -104,8 +116,8 @@
     .hero::before {
       content: '';
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: min(220px, 40vw);
+      height: min(220px, 40vw);
       background: rgba(255, 215, 0, 0.1);
       border-radius: 50%;
       top: 10%;
@@ -116,8 +128,8 @@
     .hero::after {
       content: '';
       position: absolute;
-      width: 320px;
-      height: 320px;
+      width: min(320px, 50vw);
+      height: min(320px, 50vw);
       background: rgba(0, 191, 255, 0.08);
       border-radius: 50%;
       bottom: 0;
@@ -139,10 +151,11 @@
       max-width: 1000px;
       position: relative;
       z-index: 5;
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 4.2rem;
+      font-size: clamp(2.2rem, 8vw, 4.2rem);
       font-weight: 800;
       line-height: 1.1;
       background: linear-gradient(120deg, #fff8e0, #FFD700, #ffe270);
@@ -158,22 +171,22 @@
     }
 
     .hero p {
-      font-size: 1.4rem;
-      margin-top: 25px;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      margin-top: 20px;
       color: #d9e2f0;
       font-weight: 300;
       backdrop-filter: blur(2px);
     }
 
     .hero .btn {
-      margin-top: 45px;
-      padding: 16px 48px;
+      margin-top: 35px;
+      padding: 14px 32px;
       background: transparent;
       border: 2px solid #FFD700;
       color: #FFD700;
       font-weight: 700;
       border-radius: 50px;
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
       text-decoration: none;
       display: inline-block;
       transition: 0.4s;
@@ -190,25 +203,27 @@
 
     /* section general */
     .section {
-      padding: 110px 8%;
+      padding: clamp(60px, 10vh, 110px) 5%;
       position: relative;
+      width: 100%;
     }
 
     .section h2 {
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 6vw, 2.8rem);
       font-weight: 700;
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: clamp(40px, 8vh, 70px);
       color: #FFD700;
       position: relative;
       display: inline-block;
       width: 100%;
+      word-break: break-word;
     }
 
     .section h2:after {
       content: '';
       display: block;
-      width: 120px;
+      width: min(120px, 30%);
       height: 4px;
       background: #FFD700;
       margin: 18px auto 0;
@@ -219,9 +234,10 @@
     /* ===== CURRICULUM SECTION (NURSERY TO 12TH) ===== */
     .grade-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 35px;
-      margin-bottom: 70px;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: clamp(20px, 3vw, 35px);
+      margin-bottom: 50px;
+      width: 100%;
     }
 
     .grade-card {
@@ -229,9 +245,10 @@
       backdrop-filter: blur(4px);
       border: 1px solid rgba(255,215,0,0.15);
       border-radius: 40px 12px 40px 12px;
-      padding: 30px 25px;
+      padding: clamp(20px, 4vw, 30px) clamp(18px, 3vw, 25px);
       transition: 0.4s;
       box-shadow: 0 20px 30px -10px black;
+      width: 100%;
     }
 
     .grade-card:hover {
@@ -244,67 +261,78 @@
     .grade-header {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: clamp(10px, 2vw, 15px);
       border-bottom: 2px dashed #FFD700;
       padding-bottom: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .grade-header i {
-      font-size: 2.8rem;
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
       color: #FFD700;
       filter: drop-shadow(0 0 5px gold);
     }
 
     .grade-header h3 {
-      font-size: 1.9rem;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
       font-weight: 700;
       color: white;
+      word-break: break-word;
     }
 
     .grade-card p {
       margin: 8px 0;
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .grade-card i.fa-arrow-right {
       color: #FFD700;
       font-size: 0.9rem;
+      flex-shrink: 0;
     }
 
     .subject-badge {
       display: inline-block;
       background: rgba(255,215,0,0.15);
-      padding: 5px 15px;
+      padding: 5px 12px;
       border-radius: 40px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin: 5px 5px 0 0;
       border: 1px solid #FFD70033;
+      white-space: nowrap;
     }
 
     /* AI PROGRESSIVE LEARNING SECTION */
     .ai-showcase {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: clamp(25px, 5vw, 40px);
       background: linear-gradient(145deg, #0f1a24, #07111c);
       border-radius: 70px 20px 70px 20px;
-      padding: 50px;
+      padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 50px);
       border: 1px solid #FFD70033;
-      margin-top: 40px;
+      margin-top: 30px;
+      width: 100%;
     }
 
     .ai-content {
       flex: 1 1 300px;
+      min-width: 250px;
     }
 
     .ai-content h3 {
-      font-size: 2.3rem;
+      font-size: clamp(1.8rem, 5vw, 2.3rem);
       color: #FFD700;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .ai-content ul {
@@ -312,17 +340,19 @@
     }
 
     .ai-content li {
-      margin: 20px 0;
-      font-size: 1.2rem;
+      margin: 15px 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       display: flex;
       align-items: center;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .ai-content li i {
       color: #FFD700;
-      font-size: 2rem;
+      font-size: clamp(1.6rem, 4vw, 2rem);
       width: 40px;
+      flex-shrink: 0;
     }
 
     .ai-image {
@@ -330,32 +360,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-width: 250px;
     }
 
     .image-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      gap: clamp(10px, 2vw, 15px);
+      width: 100%;
     }
 
     .image-item {
       background: #2d3b4f;
       border-radius: 30px 8px 30px 8px;
-      padding: 25px 10px;
+      padding: clamp(15px, 3vw, 25px) 5px;
       text-align: center;
       border: 1px solid gold;
       transition: 0.3s;
     }
 
     .image-item i {
-      font-size: 3.5rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: #FFD700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .image-item span {
       display: block;
       font-weight: 500;
+      font-size: clamp(0.8rem, 2vw, 1rem);
     }
 
     .image-item:hover {
@@ -367,21 +400,21 @@
       color: black;
     }
 
-    /* features grid (existing) */
+    /* features grid */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 35px;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: clamp(20px, 3vw, 35px);
     }
 
     .card {
       background: rgba(20, 30, 45, 0.8);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255,215,0,0.2);
-      padding: 40px 20px;
+      padding: clamp(25px, 4vw, 40px) clamp(15px, 3vw, 20px);
       border-radius: 40px 12px 40px 12px;
       text-align: center;
-      font-size: 1.4rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       font-weight: 600;
       transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
       box-shadow: 0 20px 30px -10px rgba(0,0,0,0.7);
@@ -390,10 +423,11 @@
       align-items: center;
       gap: 15px;
       cursor: default;
+      width: 100%;
     }
 
     .card i {
-      font-size: 3.3rem;
+      font-size: clamp(2.5rem, 5vw, 3.3rem);
       color: #FFD700;
       filter: drop-shadow(0 0 8px gold);
       transition: 0.3s;
@@ -414,11 +448,11 @@
 
     /* form area */
     .admission-form {
-      max-width: 700px;
+      max-width: min(700px, 100%);
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(12px);
-      padding: 45px;
+      padding: clamp(25px, 5vw, 45px);
       border-radius: 40px 12px 40px 12px;
       border: 1px solid rgba(255,215,0,0.3);
       box-shadow: 0 25px 50px #00000080;
@@ -435,6 +469,7 @@
       font-weight: 500;
       color: #FFD700;
       letter-spacing: 0.5px;
+      font-size: clamp(0.95rem, 2.5vw, 1rem);
     }
 
     .input-group input, .input-group textarea, .input-group select {
@@ -459,19 +494,14 @@
       box-shadow: 0 0 0 4px rgba(255,215,0,0.2), 0 0 20px gold;
     }
 
-    .input-group textarea {
-      border-radius: 30px;
-      resize: vertical;
-    }
-
     .btn-submit {
       background: #FFD700;
       border: none;
       color: #0b0f17;
       font-weight: 700;
-      padding: 18px 45px;
+      padding: 18px 30px;
       border-radius: 60px;
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
       cursor: pointer;
       transition: 0.3s;
       box-shadow: 0 10px 20px #ffbf00;
@@ -490,19 +520,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 25px;
-      font-size: 1.3rem;
+      gap: 20px;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       background: rgba(255,215,0,0.05);
-      padding: 40px;
+      padding: clamp(25px, 5vw, 40px);
       border-radius: 60px 16px 60px 16px;
       backdrop-filter: blur(4px);
       border: 1px solid gold;
+      width: 100%;
+      word-break: break-word;
+    }
+
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .contact-info i {
       color: #FFD700;
-      font-size: 2rem;
-      margin-right: 12px;
+      font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
     .map-container {
@@ -524,7 +563,7 @@
     iframe {
       display: block;
       width: 100%;
-      height: 320px;
+      height: clamp(250px, 40vh, 320px);
       filter: grayscale(0.2) invert(4%) contrast(1.1);
     }
 
@@ -533,29 +572,30 @@
       background: #03050a;
       padding: 35px 20px;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
       border-top: 1px solid #FFD70033;
       color: #aab3c3;
+      width: 100%;
     }
     footer span {
       color: #FFD700;
       font-weight: 600;
     }
 
-    /* whatsapp animated */
+    /* whatsapp animated - responsive */
     .whatsapp {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: clamp(15px, 4vh, 30px);
+      right: clamp(15px, 4vw, 30px);
       background: #25D366;
       color: white;
-      width: 70px;
-      height: 70px;
+      width: clamp(55px, 12vw, 70px);
+      height: clamp(55px, 12vw, 70px);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.4rem;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
       text-decoration: none;
       box-shadow: 0 8px 20px #25d36699;
       z-index: 999;
@@ -574,22 +614,75 @@
       animation: none;
     }
 
-    @media(max-width: 900px) {
-      .hero h1 { font-size: 3rem; }
-      nav a { margin-left: 18px; font-size: 0.95rem; }
-      .logo { font-size: 1.4rem; }
+    /* tablet and small laptop adjustments */
+    @media screen and (max-width: 1024px) and (min-width: 769px) {
+      .grade-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+      }
     }
-    @media(max-width: 600px) {
-      header { padding: 15px 5%; flex-wrap: wrap; }
-      nav a { margin: 0 8px; }
-      .hero h1 { font-size: 2.4rem; }
-      .section { padding: 80px 5%; }
+
+    @media screen and (max-width: 768px) {
+      nav a {
+        margin-left: 12px;
+        font-size: 0.9rem;
+      }
+      .grade-header h3 {
+        font-size: 1.5rem;
+      }
+      .ai-showcase {
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header {
+        padding: 12px 4%;
+      }
+      nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.85rem;
+      }
+      .logo {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero .btn {
+        padding: 12px 24px;
+      }
+      .grade-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-info p {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+    /* extra small devices */
+    @media screen and (max-width: 360px) {
+      nav a {
+        margin: 0 5px;
+        font-size: 0.75rem;
+      }
+      .subject-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo"><i class="fas fa-gem" style="margin-right: 6px; background:transparent; -webkit-text-fill-color:#FFD700;"></i> Sapphire World Academy</div>
+    <div class="logo"><i class="fas fa-gem"></i> Sapphire World Academy</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#curriculum">Curriculum</a>
@@ -604,12 +697,12 @@
     <div class="hero-content">
       <h1>Sapphire World<br>Academy of Talent</h1>
       <p><i class="fas fa-star" style="color:#FFD700;"></i> A Unit of Peregrine Educare | Launching in Mandideep <i class="fas fa-star" style="color:#FFD700;"></i></p>
-      <p style="font-size:1.6rem; font-weight:500;">Integrated School + Coaching · ICSE Curriculum</p>
+      <p style="font-size:clamp(1.2rem,4vw,1.6rem); font-weight:500;">Integrated School + Coaching · ICSE Curriculum</p>
       <a href="#admission" class="btn">✨ Admissions Open ✨</a>
     </div>
   </section>
 
-  <!-- ===== NEW CURRICULUM SECTION : NURSERY TO 12TH WITH SUBJECTS ===== -->
+  <!-- CURRICULUM SECTION : NURSERY TO 12TH WITH SUBJECTS -->
   <section class="section" id="curriculum">
     <h2>📚 GRADE-LEVEL EXCELLENCE 📚</h2>
     <div class="grade-grid">
@@ -714,7 +807,7 @@
     </div>
   </section>
 
-  <!-- PREMIUM FEATURES (original) -->
+  <!-- PREMIUM FEATURES -->
   <section class="section" id="features">
     <h2>✦ PREMIUM FEATURES ✦</h2>
     <div class="features">
@@ -727,7 +820,7 @@
     </div>
   </section>
 
-  <!-- ADMISSION with more fields (class selection) -->
+  <!-- ADMISSION with class selection -->
   <section class="section" id="admission">
     <h2>🎓 ONLINE ADMISSION 🎓</h2>
     <div class="admission-form">
@@ -785,9 +878,16 @@
     (function() {
       const header = document.querySelector('header');
       window.addEventListener('scroll', () => {
-        header.style.background = window.scrollY > 50 ? 'rgba(0, 0, 0, 0.95)' : 'rgba(10, 15, 25, 0.8)';
-        header.style.backdropFilter = window.scrollY > 50 ? 'blur(16px)' : 'blur(12px)';
+        if (window.scrollY > 50) {
+          header.style.background = 'rgba(0, 0, 0, 0.95)';
+          header.style.backdropFilter = 'blur(16px)';
+        } else {
+          header.style.background = 'rgba(10, 15, 25, 0.8)';
+          header.style.backdropFilter = 'blur(12px)';
+        }
       });
+
+      // optional: close mobile menu on click (if any)
     })();
   </script>
 </body>
